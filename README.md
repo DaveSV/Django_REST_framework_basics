@@ -7,3 +7,5 @@ Este proyecto muestra una API simple para obtener datos de un servidor utilizand
 ![api_restframework](https://user-images.githubusercontent.com/29576337/209400721-0c5d8d3d-656e-4090-8e5c-cb665521457b.jpg)
 
 Documentación: [https://www.django-rest-framework.org/](https://www.django-rest-framework.org/tutorial/quickstart/)
+
+Advertencia de seguridad: Secret_key en blanco
