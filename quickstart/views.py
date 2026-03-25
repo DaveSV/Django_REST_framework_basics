@@ -1,7 +1,9 @@
 
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from quickstart.serializers import UserSerializer, GroupSerializer
+from .models import Proyecto
+from .serializers import ProyectoSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -16,3 +18,9 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class ProyectoViewSet(viewsets.ModelViewSet):
+    queryset = Proyecto.objects.all()
+    serializer_class = ProyectoSerializer
+    # Cambiamos la regla solo para esta vista:
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
